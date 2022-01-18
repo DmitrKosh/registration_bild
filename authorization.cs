@@ -26,6 +26,11 @@ namespace registration
             SqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DataBase"].ConnectionString);
 
             SqlConnection.Open();
+
+            if (SqlConnection.State == ConnectionState.Open)
+            {
+                MessageBox.Show("Подключение к Базе Данных установлено");
+            }
         }
     }
 }

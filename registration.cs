@@ -13,11 +13,11 @@ using System.Data.SqlClient;
 
 namespace registration
 {
-    public partial class Form1 : Form
+    public partial class registration : Form
     {
         private SqlConnection SqlConnection = null;
 
-        public Form1()
+        public registration()
         {
             InitializeComponent();
         }
@@ -33,6 +33,10 @@ namespace registration
 
             SqlConnection.Open();
 
+            if (SqlConnection.State == ConnectionState.Open)
+                {
+                MessageBox.Show("Подключение к Базе Данных установлено");
+                }
         }
     }
 }
