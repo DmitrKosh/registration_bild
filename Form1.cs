@@ -32,6 +32,7 @@ namespace registration
             SqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DataBase"].ConnectionString);
 
             SqlConnection.Open();
+
         }
     }
 }
