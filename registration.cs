@@ -51,7 +51,16 @@ namespace registration
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO [Users] (name, sername, phone, password, email)");
+            SqlCommand command = new SqlCommand($"INSERT INTO [Users] (name, sername, phone, password, email) VALUES (@name, @sername, @phone, @password, @email)", SqlConnection);
+
+
+            command.Parameters.AddWithValue("name", txtName.Text);
+            command.Parameters.AddWithValue("sername", txtSername.Text);
+            command.Parameters.AddWithValue("phone", txtPhone.Text);
+            command.Parameters.AddWithValue("password", txtPassword.Text);
+            command.Parameters.AddWithValue("email", txtEmail.Text);
+
+            MessageBox.Show(command.ExecuteNonQuery().ToString());
         }
     }
 }
