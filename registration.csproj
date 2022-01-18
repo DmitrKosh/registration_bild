@@ -110,6 +110,8 @@
     <None Include="Resources\avatar_face_girl_female_woman_profile_smiley_happy_people_icon_181656.png" />
     <None Include="Resources\avatar_face_man_boy_profile_smiley_happy_people_icon_181659.png" />
     <None Include="Resources\avatar_face_man_boy_male_profile_smiley_happy_people_icon_181657.png" />
+    <None Include="Resources\questionincircularbutton_80033.png" />
+    <None Include="Resources\vopros.png" />
     <Content Include="TestDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
