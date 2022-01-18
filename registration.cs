@@ -48,5 +48,10 @@ namespace registration
             ifrm.Show();
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SqlCommand command = new SqlCommand("INSERT INTO [Users] (name, sername, phone, password, email)");
+        }
     }
 }
