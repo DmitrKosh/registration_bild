@@ -16,7 +16,7 @@ namespace registration
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new registration());
+            Application.Run(new authorization());
         }
     }
 }

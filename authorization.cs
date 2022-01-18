@@ -23,14 +23,26 @@ namespace registration
 
         private void authorization_Load(object sender, EventArgs e)
         {
-            SqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DataBase"].ConnectionString);
+            SqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DataBase"].ConnectionString); //конектим бд
 
-            SqlConnection.Open();
+            SqlConnection.Open(); //открываем бд
 
-            if (SqlConnection.State == ConnectionState.Open)
+            if (SqlConnection.State == ConnectionState.Open) //проверяем открылась ли БД
             {
                 MessageBox.Show("Подключение к Базе Данных установлено");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form ifrm = new registration();
+            ifrm.Show(); //отображение формы регистрации 
+            this.Hide(); //скрываем текущую форму
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

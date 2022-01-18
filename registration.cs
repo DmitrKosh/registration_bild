@@ -22,6 +22,7 @@ namespace registration
             InitializeComponent();
         }
 
+
         private void button3_Click(object sender, EventArgs e)
         {
             Close();
@@ -37,6 +38,15 @@ namespace registration
                 {
                 MessageBox.Show("Подключение к Базе Данных установлено");
                 }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+            Form ifrm = Application.OpenForms[0];
+            ifrm.Show();
+            this.Close();
         }
     }
 }
