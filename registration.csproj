@@ -90,6 +90,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -105,6 +106,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\avatar_face_girl_female_woman_profile_smiley_happy_people_icon_181662.png" />
+    <None Include="Resources\avatar_face_girl_female_woman_profile_smiley_happy_people_icon_181656.png" />
+    <None Include="Resources\avatar_face_man_boy_profile_smiley_happy_people_icon_181659.png" />
+    <None Include="Resources\avatar_face_man_boy_male_profile_smiley_happy_people_icon_181657.png" />
     <Content Include="TestDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
