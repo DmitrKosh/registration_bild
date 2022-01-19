@@ -58,7 +58,6 @@ namespace registration
 
             string StrokaName = txtName.Text;
             string StrokaSurname = txtSurname.Text;
-            string StrokaPhone = txtPhone.Text;
             string StrokaPassword = txtPassword.Text;
             string StrokaEmail = txtEmail.Text;
 
@@ -69,12 +68,6 @@ namespace registration
             {
                 MessageBox.Show("фамилия слишком короткая или длинная!");
             }
-            
-            else if
-                (StrokaPhone.Length < 11 && StrokaPhone.Length > 11)
-            {
-                MessageBox.Show("Неверный формат телефона!");
-            }
 
             else if
                 (StrokaPassword.Length < 5 && StrokaPassword.Length > 15)
@@ -83,35 +76,24 @@ namespace registration
             }
 
             else if
-                (StrokaEmail.Length < 5 && StrokaEmail.Length > 25)
+                (StrokaEmail.Length < 5 && StrokaEmail.Length > 20)
             {
-                MessageBox.Show("не верный формат электронной почты!");
+                MessageBox.Show("Логин должен включать от 5 до 20 символов");
             }
 
             else
             {
-                SqlCommand command = new SqlCommand($"INSERT INTO [Users] (name, surname, phone, password, email) VALUES (@name, @surname, @phone, @password, @email)", SqlConnection);
+                SqlCommand command = new SqlCommand($"INSERT INTO [Users] (name, surname, password, email) VALUES (@name, @surname, @password, @email)", SqlConnection);
 
 
                 command.Parameters.AddWithValue("name", txtName.Text);
                 command.Parameters.AddWithValue("surname", txtSurname.Text);
-                command.Parameters.AddWithValue("phone", txtPhone.Text);
                 command.Parameters.AddWithValue("password", txtPassword.Text);
                 command.Parameters.AddWithValue("email", txtEmail.Text);
 
                 MessageBox.Show(command.ExecuteNonQuery().ToString());
 
             }
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSurname_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

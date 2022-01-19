@@ -143,17 +143,17 @@ namespace registration
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Candara Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(10, 220);
+            this.label3.Location = new System.Drawing.Point(12, 220);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 23);
+            this.label3.Size = new System.Drawing.Size(54, 23);
             this.label3.TabIndex = 10;
-            this.label3.Text = "E-Mail";
+            this.label3.Text = "Login";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Candara Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(10, 280);
+            this.label4.Location = new System.Drawing.Point(12, 281);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 23);
             this.label4.TabIndex = 11;
