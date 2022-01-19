@@ -55,9 +55,10 @@ namespace registration
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(26, 346);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 23);
+            this.button1.Size = new System.Drawing.Size(123, 30);
             this.button1.TabIndex = 0;
             this.button1.Text = "Регистрация";
             this.button1.UseVisualStyleBackColor = true;
@@ -65,9 +66,10 @@ namespace registration
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(155, 346);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
+            this.button2.Size = new System.Drawing.Size(123, 30);
             this.button2.TabIndex = 1;
             this.button2.Text = "Выход";
             this.button2.UseVisualStyleBackColor = true;
@@ -199,7 +201,7 @@ namespace registration
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(304, 450);
+            this.ClientSize = new System.Drawing.Size(304, 425);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label4);

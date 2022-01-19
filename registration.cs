@@ -65,7 +65,7 @@ namespace registration
             if (StrokaName.Length < 2 && StrokaName.Length >10)
                 MessageBox.Show("Имя слишком короткое или длинное!");
             else if
-                (StrokaSurname.Length < 4 && StrokaSurname.Length > 15)
+                (StrokaSurname.Length < 3 && StrokaSurname.Length > 15)
             {
                 MessageBox.Show("фамилия слишком короткая или длинная!");
             }
@@ -104,5 +104,14 @@ namespace registration
             }
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSurname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
