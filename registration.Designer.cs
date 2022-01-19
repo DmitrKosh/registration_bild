@@ -37,7 +37,7 @@ namespace registration
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtSername = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -96,6 +96,7 @@ namespace registration
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(118, 12);
+            this.txtName.MaxLength = 10;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(185, 22);
             this.txtName.TabIndex = 5;
@@ -114,12 +115,13 @@ namespace registration
             this.txtPhone.Size = new System.Drawing.Size(185, 22);
             this.txtPhone.TabIndex = 7;
             // 
-            // txtSername
+            // txtSurname
             // 
-            this.txtSername.Location = new System.Drawing.Point(118, 37);
-            this.txtSername.Name = "txtSername";
-            this.txtSername.Size = new System.Drawing.Size(185, 22);
-            this.txtSername.TabIndex = 8;
+            this.txtSurname.Location = new System.Drawing.Point(118, 37);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(185, 22);
+            this.txtSurname.TabIndex = 8;
+
             // 
             // txtPassword
             // 
@@ -127,6 +129,7 @@ namespace registration
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(185, 22);
             this.txtPassword.TabIndex = 9;
+
             // 
             // button1
             // 
@@ -157,7 +160,7 @@ namespace registration
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtSername);
+            this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtName);
@@ -186,7 +189,7 @@ namespace registration
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtSername;
+        private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

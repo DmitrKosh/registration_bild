@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Data;  
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+
 
 
 namespace registration
@@ -20,6 +21,7 @@ namespace registration
         public registration()
         {
             InitializeComponent();
+
         }
 
 
@@ -35,9 +37,9 @@ namespace registration
             SqlConnection.Open();
 
             if (SqlConnection.State == ConnectionState.Open)
-                {
+            {
                 MessageBox.Show("Подключение к Базе Данных установлено");
-                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,16 +53,56 @@ namespace registration
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand($"INSERT INTO [Users] (name, sername, phone, password, email) VALUES (@name, @sername, @phone, @password, @email)", SqlConnection);
 
 
-            command.Parameters.AddWithValue("name", txtName.Text);
-            command.Parameters.AddWithValue("sername", txtSername.Text);
-            command.Parameters.AddWithValue("phone", txtPhone.Text);
-            command.Parameters.AddWithValue("password", txtPassword.Text);
-            command.Parameters.AddWithValue("email", txtEmail.Text);
 
-            MessageBox.Show(command.ExecuteNonQuery().ToString());
+            string StrokaName = txtName.Text;
+            string StrokaSurname = txtSurname.Text;
+            string StrokaPhone = txtPhone.Text;
+            string StrokaPassword = txtPassword.Text;
+            string StrokaEmail = txtEmail.Text;
+
+            if (StrokaName.Length < 2 && StrokaName.Length >10)
+                MessageBox.Show("Имя слишком короткое или длинное!");
+            else if
+                (StrokaSurname.Length < 4 && StrokaSurname.Length > 15)
+            {
+                MessageBox.Show("фамилия слишком короткая или длинная!");
+            }
+            
+            else if
+                (StrokaPhone.Length < 11 && StrokaPhone.Length > 11)
+            {
+                MessageBox.Show("Неверный формат телефона!");
+            }
+
+            else if
+                (StrokaPassword.Length < 5 && StrokaPassword.Length > 15)
+            {
+                MessageBox.Show("Пароль должен быть не менее 5 символов и не более 15 символов!");
+            }
+
+            else if
+                (StrokaEmail.Length < 5 && StrokaEmail.Length > 25)
+            {
+                MessageBox.Show("не верный формат электронной почты!");
+            }
+
+            else
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO [Users] (name, surname, phone, password, email) VALUES (@name, @surname, @phone, @password, @email)", SqlConnection);
+
+
+                command.Parameters.AddWithValue("name", txtName.Text);
+                command.Parameters.AddWithValue("surname", txtSurname.Text);
+                command.Parameters.AddWithValue("phone", txtPhone.Text);
+                command.Parameters.AddWithValue("password", txtPassword.Text);
+                command.Parameters.AddWithValue("email", txtEmail.Text);
+
+                MessageBox.Show(command.ExecuteNonQuery().ToString());
+
+            }
         }
+
     }
 }
