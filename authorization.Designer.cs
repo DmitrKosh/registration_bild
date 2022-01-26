@@ -45,6 +45,7 @@ namespace registration
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -56,7 +57,7 @@ namespace registration
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(26, 346);
+            this.button1.Location = new System.Drawing.Point(56, 394);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 30);
             this.button1.TabIndex = 0;
@@ -67,38 +68,37 @@ namespace registration
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(155, 346);
+            this.button2.Location = new System.Drawing.Point(185, 394);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(123, 30);
             this.button2.TabIndex = 1;
             this.button2.Text = "Выход";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(12, 246);
+            this.textBox1.Location = new System.Drawing.Point(42, 242);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(249, 22);
             this.textBox1.TabIndex = 2;
             this.toolTip1.SetToolTip(this.textBox1, "Введите в данном поле электронную почту, к которой привязан ваш аккаунт");
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.Location = new System.Drawing.Point(12, 307);
+            this.textBox2.Location = new System.Drawing.Point(42, 303);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(249, 22);
             this.textBox2.TabIndex = 3;
             this.toolTip1.SetToolTip(this.textBox2, "Введите в данном окне пароль от вашего аккаунта");
+            this.textBox2.UseSystemPasswordChar = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(88, 31);
+            this.label1.Location = new System.Drawing.Point(118, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 25);
             this.label1.TabIndex = 8;
@@ -108,7 +108,7 @@ namespace registration
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(55, 73);
+            this.label2.Location = new System.Drawing.Point(85, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(181, 36);
             this.label2.TabIndex = 9;
@@ -122,7 +122,7 @@ namespace registration
             // pictureBox6
             // 
             this.pictureBox6.Image = global::registration.Properties.Resources.vopros;
-            this.pictureBox6.Location = new System.Drawing.Point(267, 307);
+            this.pictureBox6.Location = new System.Drawing.Point(297, 303);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(38, 39);
             this.pictureBox6.TabIndex = 13;
@@ -132,7 +132,7 @@ namespace registration
             // pictureBox5
             // 
             this.pictureBox5.Image = global::registration.Properties.Resources.vopros;
-            this.pictureBox5.Location = new System.Drawing.Point(267, 246);
+            this.pictureBox5.Location = new System.Drawing.Point(297, 242);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(38, 39);
             this.pictureBox5.TabIndex = 12;
@@ -143,17 +143,17 @@ namespace registration
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Candara Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(10, 220);
+            this.label3.Location = new System.Drawing.Point(40, 216);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 23);
+            this.label3.Size = new System.Drawing.Size(54, 23);
             this.label3.TabIndex = 10;
-            this.label3.Text = "E-Mail";
+            this.label3.Text = "Login";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Candara Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(10, 280);
+            this.label4.Location = new System.Drawing.Point(40, 276);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 23);
             this.label4.TabIndex = 11;
@@ -163,7 +163,7 @@ namespace registration
             // 
             this.pictureBox4.BackgroundImage = global::registration.Properties.Resources.avatar_face_man_boy_male_profile_smiley_happy_people_icon_181657;
             this.pictureBox4.Image = global::registration.Properties.Resources.avatar_face_man_boy_male_profile_smiley_happy_people_icon_181657;
-            this.pictureBox4.Location = new System.Drawing.Point(218, 127);
+            this.pictureBox4.Location = new System.Drawing.Point(248, 123);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(74, 65);
             this.pictureBox4.TabIndex = 7;
@@ -172,7 +172,7 @@ namespace registration
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImage = global::registration.Properties.Resources.avatar_face_man_boy_profile_smiley_happy_people_icon_181659;
-            this.pictureBox3.Location = new System.Drawing.Point(77, 127);
+            this.pictureBox3.Location = new System.Drawing.Point(107, 123);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(72, 65);
             this.pictureBox3.TabIndex = 6;
@@ -181,7 +181,7 @@ namespace registration
             // pictureBox2
             // 
             this.pictureBox2.Image = global::registration.Properties.Resources.avatar_face_girl_female_woman_profile_smiley_happy_people_icon_181662;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 127);
+            this.pictureBox2.Location = new System.Drawing.Point(37, 123);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(70, 65);
             this.pictureBox2.TabIndex = 5;
@@ -190,18 +190,29 @@ namespace registration
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::registration.Properties.Resources.avatar_face_girl_female_woman_profile_smiley_happy_people_icon_181656;
-            this.pictureBox1.Location = new System.Drawing.Point(147, 127);
+            this.pictureBox1.Location = new System.Drawing.Point(177, 123);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(71, 65);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(123, 331);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(123, 30);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Войти";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(304, 425);
+            this.ClientSize = new System.Drawing.Size(367, 440);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label4);
@@ -249,5 +260,6 @@ namespace registration
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button button3;
     }
 }

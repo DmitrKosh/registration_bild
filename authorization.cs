@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using MySqlConnector;
 
 namespace registration
 {
@@ -40,14 +41,29 @@ namespace registration
             this.Hide(); //скрываем текущую форму
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        [Obsolete]
+        private void button3_Click(object sender, EventArgs e)
         {
+            String LoginUser = textBox1.Text;
+            String PassUser = textBox2.Text;
 
+
+            DataTable table = new DataTable();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            SqlCommand command = new SqlCommand($"INSERT INTO [Users] (name, surname, phone, password, email) VALUES (@name, @surname, @phone, @password, @email)", SqlConnection);
+            command.Parameters.Add("@email", MySqlDbType.VarChar).Value = LoginUser;
+            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = PassUser;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+                MessageBox.Show("Yes");
+            else
+                MessageBox.Show("No");
         }
     }
 }
