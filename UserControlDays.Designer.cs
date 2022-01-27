@@ -35,7 +35,7 @@
             // 
             this.lbdays.AutoSize = true;
             this.lbdays.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbdays.Location = new System.Drawing.Point(8, 9);
+            this.lbdays.Location = new System.Drawing.Point(8, 11);
             this.lbdays.Name = "lbdays";
             this.lbdays.Size = new System.Drawing.Size(27, 20);
             this.lbdays.TabIndex = 0;

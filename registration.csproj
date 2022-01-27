@@ -93,10 +93,12 @@
     <Compile Include="authorization.Designer.cs">
       <DependentUpon>authorization.cs</DependentUpon>
     </Compile>
-    <Compile Include="callendar_v1.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="callendar_v1.Designer.cs" />
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,15 +116,21 @@
     <Compile Include="UserControlBlank.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlBlank.Designer.cs" />
+    <Compile Include="UserControlBlank.Designer.cs">
+      <DependentUpon>UserControlBlank.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlDays.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlDays.Designer.cs" />
+    <Compile Include="UserControlDays.Designer.cs">
+      <DependentUpon>UserControlDays.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="authorization.resx">
       <DependentUpon>authorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="callendar_v1.resx" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="registration.resx">
       <DependentUpon>registration.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,8 +147,12 @@
     <EmbeddedResource Include="Resources\callendar.resx">
       <DependentUpon>callendar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlBlank.resx" />
-    <EmbeddedResource Include="UserControlDays.resx" />
+    <EmbeddedResource Include="UserControlBlank.resx">
+      <DependentUpon>UserControlBlank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlDays.resx">
+      <DependentUpon>UserControlDays.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
