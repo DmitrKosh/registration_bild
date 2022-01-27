@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.lbdays = new System.Windows.Forms.Label();
+            this.lbEvent = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbdays
@@ -41,15 +42,26 @@
             this.lbdays.TabIndex = 0;
             this.lbdays.Text = "00";
             // 
+            // lbEvent
+            // 
+            this.lbEvent.Location = new System.Drawing.Point(3, 31);
+            this.lbEvent.Name = "lbEvent";
+            this.lbEvent.Size = new System.Drawing.Size(94, 59);
+            this.lbEvent.TabIndex = 1;
+            this.lbEvent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UserControlDays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lbEvent);
             this.Controls.Add(this.lbdays);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "UserControlDays";
             this.Size = new System.Drawing.Size(100, 100);
             this.Load += new System.EventHandler(this.UserControlDays_Load);
+            this.Click += new System.EventHandler(this.UserControlDays_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,5 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbdays;
+        private System.Windows.Forms.Label lbEvent;
     }
 }

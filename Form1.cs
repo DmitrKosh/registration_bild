@@ -14,6 +14,7 @@ namespace registration
     {
 
         int month, year;
+        public static int static_month, static_year;
         public callendar_v1()
         {
             InitializeComponent();
@@ -39,6 +40,8 @@ namespace registration
             String monthName = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             lbDate.Text = monthName + " " + year;
 
+            static_month = month;
+            static_year = year;
             // Получаем первый день месяца.
 
             DateTime firstDayOfMonth = new DateTime(year, month, 1);
@@ -76,7 +79,8 @@ namespace registration
             // Меняем дни при переключении месяца ВПЕРЕД
 
             month++;
-
+            static_month = month;
+            static_year = year;
             String monthName = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             lbDate.Text = monthName + " " + year;
 
@@ -108,7 +112,8 @@ namespace registration
             // Меняем дни при переключении месяца НАЗАД
 
             month--;
-
+            static_month = month;
+            static_year = year;
             String monthName = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             lbDate.Text = monthName + " " + year;
 
