@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
-using MySqlConnector;
+using MySql.Data.MySqlClient;
 
 namespace registration
 {
@@ -57,22 +57,24 @@ namespace registration
             String LoginUser = textBox1.Text;
             String PassUser = textBox2.Text;
 
+            SqlCommand command = new SqlCommand("SELECT * FROM `TestDB` WRERE 'textBox1' = @email AND 'textBox2' = @password", SqlConnection);//Если что дело в этой строке подключения , я сделал так чтобы небыло старых версий sql , в поле email и password меняй в соотсветсвие с данными из бд 
+            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = LoginUser;
+            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = PassUser;
 
             DataTable table = new DataTable();
 
             SqlDataAdapter adapter = new SqlDataAdapter();
 
-            SqlCommand command = new SqlCommand($"INSERT INTO [Users] (name, surname, phone, password, email) VALUES (@name, @surname, @phone, @password, @email)", SqlConnection);
-            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = LoginUser;
-            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = PassUser;
-
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
             if (table.Rows.Count > 0)
-                MessageBox.Show("Yes");
+                MessageBox.Show("Всё парвильно добро пожаловать!");
             else
                 MessageBox.Show("YNo");
+            textBox1.Clear();
+            textBox2.Clear();
+
         }
     }
 }
