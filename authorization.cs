@@ -57,14 +57,14 @@ namespace registration
             
 
 
-            DataTable dataSet = new DataTable();
 
+            DataTable dataSet = new DataTable();
             dataAdapter.Fill(dataSet);
 
             if (dataSet.Rows.Count > 0)
             {
 
-
+            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = PassUser;
 
                 this.Hide();
                 callendar_v1 ifrmn = new callendar_v1();
@@ -79,6 +79,7 @@ namespace registration
                 MessageBox.Show("Неправильно введённые имя или пароль");
             }
           
+
 
         }
 
