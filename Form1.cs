@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace registration
 {
     public partial class callendar_v1 : Form
     {
+        private SqlConnection SqlConnection = null;
 
         int month, year;
         public static int static_month, static_year;
@@ -22,12 +25,19 @@ namespace registration
 
         private void label1_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void callendar_v1_Load(object sender, EventArgs e)
         {
             displayDays();
+
+            SqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DataBase"].ConnectionString);
+
+            SqlConnection.Open();
+
+
+
         }
 
         private void displayDays()
@@ -72,6 +82,20 @@ namespace registration
             }
         }
 
+        private void btLogOut_Click(object sender, EventArgs e)
+        {
+            Form ifrm = Application.OpenForms[0];
+            ifrm.Show();
+            this.Close();
+
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void lbNext_Click(object sender, EventArgs e)
         {
             dayContainer.Controls.Clear();
@@ -94,6 +118,8 @@ namespace registration
             {
                 Callendar.UserControlBlank UserBlank = new Callendar.UserControlBlank();
                 dayContainer.Controls.Add(UserBlank);
+
+                
             }
 
             for (int i = 1; i <= days; i++)

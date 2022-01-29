@@ -102,7 +102,7 @@ namespace registration
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(118, 183);
+            this.txtEmail.Location = new System.Drawing.Point(119, 145);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(185, 22);
             this.txtEmail.TabIndex = 6;
@@ -116,7 +116,7 @@ namespace registration
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(119, 145);
+            this.txtPassword.Location = new System.Drawing.Point(119, 183);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(185, 22);
             this.txtPassword.TabIndex = 9;

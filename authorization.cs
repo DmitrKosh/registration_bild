@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
-using MySqlConnector;
+using MySql.Data.MySqlClient;
+using System.Data.Common;
+using System.Data.OleDb;
 
 namespace registration
 {
@@ -28,10 +30,7 @@ namespace registration
 
             SqlConnection.Open(); //открываем бд
 
-            if (SqlConnection.State == ConnectionState.Open) //проверяем открылась ли БД
-            {
-                MessageBox.Show("Подключение к Базе Данных установлено");
-            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,25 +53,34 @@ namespace registration
         [Obsolete]
         private void button3_Click(object sender, EventArgs e)
         {
-            String LoginUser = textBox1.Text;
-            String PassUser = textBox2.Text;
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT email, password FROM Users WHERE email = '" + textBox1.Text + "' and password = '"+ textBox2.Text +"'", SqlConnection);
+            
 
 
-            DataTable table = new DataTable();
+            DataTable dataSet = new DataTable();
 
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            dataAdapter.Fill(dataSet);
 
-            SqlCommand command = new SqlCommand($"INSERT INTO [Users] (name, surname, phone, password, email) VALUES (@name, @surname, @phone, @password, @email)", SqlConnection);
-            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = LoginUser;
-            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = PassUser;
+            if (dataSet.Rows.Count > 0)
+            {
 
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
 
-            if (table.Rows.Count > 0)
-                MessageBox.Show("Yes");
+
+                this.Hide();
+                callendar_v1 ifrmn = new callendar_v1();
+                ifrmn.label3.Text = textBox1.Text;
+                ifrmn.Show(); //отображение формы регистрации 
+                this.Hide();
+                textBox1.Clear();
+                textBox2.Clear();
+            }
             else
-                MessageBox.Show("YNo");
+            {
+                MessageBox.Show("Неправильно введённые имя или пароль");
+            }
+          
+
         }
+
     }
 }
