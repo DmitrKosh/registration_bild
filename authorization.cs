@@ -19,6 +19,7 @@ namespace registration
     {
         private SqlConnection SqlConnection = null;
 
+        [Obsolete]
         public authorization()
         {
             InitializeComponent();
@@ -29,8 +30,6 @@ namespace registration
             SqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DataBase"].ConnectionString); //конектим бд
 
             SqlConnection.Open(); //открываем бд
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -53,22 +52,26 @@ namespace registration
         [Obsolete]
         private void button3_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT email, password FROM Users WHERE email = '" + textBox1.Text + "' and password = '"+ textBox2.Text +"'", SqlConnection);
-            
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT name, surname, email, password FROM Users WHERE email = N'" + textBox1.Text + "' and password = N'" + textBox2.Text + "'", SqlConnection);
 
 
 
             DataTable dataSet = new DataTable();
+
             dataAdapter.Fill(dataSet);
+
+            perem.name = Convert.ToString(dataSet.Rows[0]["name"]);
+            perem.surname = Convert.ToString(dataSet.Rows[0]["surname"]);
 
             if (dataSet.Rows.Count > 0)
             {
-
-            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = PassUser;
-
+                perem.StrokaEmail = textBox1.Text;
                 this.Hide();
                 callendar_v1 ifrmn = new callendar_v1();
-                ifrmn.label3.Text = textBox1.Text;
+
+                
+                
+
                 ifrmn.Show(); //отображение формы регистрации 
                 this.Hide();
                 textBox1.Clear();

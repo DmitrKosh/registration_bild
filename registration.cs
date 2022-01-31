@@ -32,6 +32,8 @@ namespace registration
 
             SqlConnection.Open();
 
+            if (SqlConnection.State == ConnectionState.Open)
+                MessageBox.Show("БД включена");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,55 +45,48 @@ namespace registration
             this.Close();
         }
 
-        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char c = e.KeyChar;
-            int i = (int)c;
-            if (!(i == 8 || (i >= 48 && i <= 57) || (i >= 65 && i <= 70)))
-                e.Handled = true;
-        }
-
 
         private void button2_Click(object sender, EventArgs e)
         {
            
-            DataTable table = new DataTable();
+            //DataTable table = new DataTable();
 
-            string StrokaEmail = txtEmail.Text;
-            string StrokaName = txtName.Text;
-            string StrokaSurname = txtSurname.Text;
-            string StrokaPassword = txtPassword.Text;
+            perem.StrokaEmail = txtEmail.Text;
+            perem.StrokaName = txtName.Text;
+            perem.StrokaSurname = txtSurname.Text;
+            perem.StrokaPassword = txtPassword.Text;
             
 
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT email, password FROM Users WHERE email = '" + txtEmail.Text + "'", SqlConnection);
+           SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT email, password FROM Users WHERE email = '" + txtEmail.Text + "'", SqlConnection);
 
 
 
-            DataTable dataSet = new DataTable();
+            DataTable proverka = new DataTable();
 
-            dataAdapter.Fill(dataSet);
+            dataAdapter.Fill(proverka); 
 
-            if (dataSet.Rows.Count > 0)
+            if (proverka.Rows.Count > 0)
             {
                 MessageBox.Show("Логин уже занят");
             }
             else if
+            
 
-             (StrokaName.Length < 2 || StrokaName.Length > 10)
+             (perem.StrokaName.Length < 2 || perem.StrokaName.Length > 10)
                 MessageBox.Show("Имя слишком короткое или длинное!");
             else if
-                (StrokaSurname.Length < 3 || StrokaSurname.Length > 15)
+                (perem.StrokaSurname.Length < 3 || perem.StrokaSurname.Length > 15)
             {
                 MessageBox.Show("фамилия слишком короткая или длинная!");
             }
 
             else if
-                (StrokaPassword.Length < 5 || StrokaPassword.Length > 15)
+                (perem.StrokaPassword.Length < 5 || perem.StrokaPassword.Length > 15)
             {
                 MessageBox.Show("Пароль должен быть не менее 5 символов и не более 15 символов!");
             }
             else if              
-                (StrokaEmail.Length < 5 || StrokaEmail.Length > 20)
+                (perem.StrokaEmail.Length < 5 || perem.StrokaEmail.Length > 20)
             {
                 MessageBox.Show("Логин должен включать от 5 до 20 символов");
             }
@@ -99,16 +94,22 @@ namespace registration
            
             else
             {
+
+
                 SqlCommand command = new SqlCommand($"INSERT INTO [Users] (name, surname, password, email) VALUES (@name, @surname, @password, @email)", SqlConnection);
 
-               
 
                 command.Parameters.AddWithValue("name", txtName.Text);
                 command.Parameters.AddWithValue("surname", txtSurname.Text);
                 command.Parameters.AddWithValue("password", txtPassword.Text);
                 command.Parameters.AddWithValue("email", txtEmail.Text);
 
-                MessageBox.Show("Пользователь зарегистрирован");
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("Регистрация прошла успешно.");
+                  Form ifrm = Application.OpenForms[0];
+                  ifrm.Show();
+                  this.Close();
 
             }
         }

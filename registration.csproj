@@ -110,6 +110,7 @@
     <Compile Include="FormEvent.Designer.cs">
       <DependentUpon>FormEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="perem.cs" />
     <Compile Include="registration.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -21,6 +21,7 @@ namespace registration
         public callendar_v1()
         {
             InitializeComponent();
+            label3.Text = perem.name + " " + perem.surname;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -91,10 +92,6 @@ namespace registration
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void lbNext_Click(object sender, EventArgs e)
         {
