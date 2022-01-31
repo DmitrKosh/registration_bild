@@ -14,6 +14,6 @@ namespace registration
         public static string StrokaPassword;
         public static string name;
         public static string surname;
-
+        
     }
 }

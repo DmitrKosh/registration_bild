@@ -52,7 +52,7 @@ namespace registration
         [Obsolete]
         private void button3_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT name, surname, email, password FROM Users WHERE email = N'" + textBox1.Text + "' and password = N'" + textBox2.Text + "'", SqlConnection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT id, name, surname, email, password FROM Users WHERE email = N'" + textBox1.Text + "' and password = N'" + textBox2.Text + "'", SqlConnection);
 
 
 
@@ -60,11 +60,13 @@ namespace registration
 
             dataAdapter.Fill(dataSet);
 
-            perem.name = Convert.ToString(dataSet.Rows[0]["name"]);
-            perem.surname = Convert.ToString(dataSet.Rows[0]["surname"]);
+            
 
             if (dataSet.Rows.Count > 0)
             {
+                
+                perem.name = Convert.ToString(dataSet.Rows[0]["name"]);
+                perem.surname = Convert.ToString(dataSet.Rows[0]["surname"]);
                 perem.StrokaEmail = textBox1.Text;
                 this.Hide();
                 callendar_v1 ifrmn = new callendar_v1();

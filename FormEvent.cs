@@ -48,6 +48,7 @@ namespace registration
                 command.Parameters.AddWithValue("data", txtDate.Text);
                 command.Parameters.AddWithValue("email", perem.StrokaEmail);
                 
+
                 command.ExecuteNonQuery();
 
                 MessageBox.Show("Мероприятие сохранено.");
