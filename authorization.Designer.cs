@@ -88,7 +88,6 @@ namespace registration
             this.textBox1.Size = new System.Drawing.Size(249, 22);
             this.textBox1.TabIndex = 2;
             this.toolTip1.SetToolTip(this.textBox1, "Введите в данном поле электронную почту, к которой привязан ваш аккаунт");
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 

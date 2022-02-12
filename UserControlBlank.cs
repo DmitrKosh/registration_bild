@@ -16,10 +16,5 @@ namespace registration.Callendar
         {
             InitializeComponent();
         }
-
-        private void UserControlBlank_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

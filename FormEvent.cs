@@ -24,7 +24,7 @@ namespace registration
 
         private void FormEvent_Load(object sender, EventArgs e)
         {
-            txtDate.Text = Callendar.UserControlDays.static_day + "/" + callendar_v1.static_month + "/" + callendar_v1.static_year;
+            txtDate.Text = Callendar.UserControlDays.static_day + "/" + Callendar_forma.static_month + "/" + Callendar_forma.static_year;
 
             SqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DataBase"].ConnectionString);
 
@@ -46,7 +46,7 @@ namespace registration
                 command.Parameters.AddWithValue("type_event", txtTypeEvent.Text);
                 command.Parameters.AddWithValue("description", txtDescription.Text);
                 command.Parameters.AddWithValue("data", txtDate.Text);
-                command.Parameters.AddWithValue("email", perem.StrokaEmail);
+                command.Parameters.AddWithValue("email", perem.email);
                 
 
                 command.ExecuteNonQuery();
